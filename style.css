@@ -1,0 +1,1052 @@
+
+
+/* body{
+    margin-bottom: 30px;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    /* outline: none; */
+}
+
+body{
+    background: #352E3E;
+    color: white;
+}
+
+:root{
+    --blackcurrant-50: #f6f5f9;
+    --blackcurrant-100: #eae8f1;
+    --blackcurrant-200: #d9d6e7;
+    --blackcurrant-300: #c0bad6;
+    --blackcurrant-400: #a299c1;
+    --blackcurrant-500: #8e80b1;
+    --blackcurrant-600: #816ea2;
+    --blackcurrant-700: #766293;
+    --blackcurrant-800: #655479;
+    --blackcurrant-900: #524662;
+    --blackcurrant-950: #352e3e;
+    
+    
+    }
+    
+
+input{
+    background-color: #352E3E;
+    color: white;
+}
+
+
+/* NavBar */
+
+.navbar{
+    margin-bottom: 70px;
+}
+
+    .navbar h1{
+        font-weight: 600;
+        margin-left: 15px;
+        color: var(--blackcurrant-500);
+    }
+
+    .navbar button{
+        margin-right: 15px;
+    }
+
+.informationNav{
+    padding-bottom: 1px !important;
+}
+
+.listNav{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;  
+    font-weight: bold;
+}
+
+.listNav a{
+    text-decoration: none;
+    color: #fff;
+}
+
+    .listNav a:first-child{
+        margin-top: 10px;
+    }
+
+    .listNav a:nth-child(2){
+        margin: 10px 0;
+    }
+
+.text-body-emphasis{
+    margin-left: 4px;
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--blackcurrant-500);
+}
+
+/* header */
+.container-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 15px 15px 30px 15px;
+
+}
+    .container-header a{
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+    }
+
+ 
+#mostrarModal{
+    border-color: #cecece;
+    color: #fff;
+    padding: 5px 60px 7px 60px;
+    font-size: 21px;
+    margin-bottom: 15px;
+    border-width: 2px;
+    /* font-weight: bold; */
+    /* border-radius: 7px; */
+    /* border: none; */
+} 
+
+#mostrarModal:hover{
+    border-color: #212529;
+}
+
+.contenedor-tiempo_ejecucion{
+    display: none;
+}
+
+/* Botones principal */
+
+.btn-detener{
+    display:none;
+}
+
+
+
+/* Ventana Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-contenido {
+    background-color: white;
+    color: black;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    border-radius: 10px;
+}
+
+    .modal-contenido #modal-tittle{
+        font-size: 30px;
+        color: #454545;
+        font-weight: bold;
+        
+    }
+
+    .modal-header{
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+#contenedor-tiempo-prueba{
+    display: flex;
+}
+
+.contenedor-tiempo{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+    .contenedor-tiempo h2{
+        margin-bottom: 25px;
+        font-size: 25px;
+        color: #454545;
+    }
+    .contenedor-tiempo label{
+        font-size: 20px;
+    }
+
+    .contenedor-tiempo input{
+        margin-right: 48.5px;
+        width: 80px;
+        background: #fff;
+        border: none;
+        border-bottom: 1px solid #454545;
+        color: black;
+        font-size: 18px;
+        outline: none;
+        text-align: center;
+
+
+        background-color: #e9e9e9;
+        border: none;
+        padding: 5px;
+        opacity: 0.9;
+        border-radius: 5px;
+    }
+ 
+.contenedor-tiempo_descanso{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}   
+
+    .contenedor-tiempo_descanso h2{
+        margin-bottom: 25px;
+        font-size: 25px;
+        color: #454545;
+    }
+    .contenedor-tiempo_descanso label{
+        font-size: 20px;
+    }
+
+    .contenedor-tiempo_descanso input{
+        margin-right: 48.5px;
+        width: 80px;
+        background: #fff;
+        border: none;
+        border-bottom: 1px solid #454545;
+        color: black;
+        font-size: 18px;
+        outline: none;
+        text-align: center;
+
+        background-color: #e9e9e9;
+        border: none;
+        padding: 5px;
+        opacity: 0.9;
+        border-radius: 5px;
+
+    }
+.modal-more_options{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.modal-more_options label{
+    margin-bottom: 10px;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.modal-more_options input{
+    width: 80px;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #454545;
+    color: black;
+    font-size: 18px;
+    outline: none;
+    text-align: center;
+}
+
+.cerrar {
+    cursor: pointer;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.container-btn-modal{
+margin-top: 30px;
+text-align: center;
+}
+
+
+.btn-accept-modal{
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 8px 10% !important;
+}
+
+
+
+#intervalo_descanso{
+    background-color: #e9e9e9;
+    border: none;
+    padding: 5px;
+    opacity: 0.8;
+    border-radius: 5px;
+}
+/* tasks */
+
+.container-task{
+    background-color: #fff;
+    color: black;
+    padding: 15px;
+    margin: 15px 5px;
+    border-radius: 7px;
+    opacity: 0.9;
+
+}
+
+
+.tarea-completada{
+    border: 4px solid #198754;
+}
+
+.tarea-seleccionada{
+    /* margin-left: 3px; */
+    border-left: 9px solid #54595a;
+    opacity: 1;
+}
+
+
+
+
+.container-task_options{
+    display: none;
+    margin-bottom: 8px !important
+}
+
+
+
+
+/* Main container */
+
+.contenedor-principal{
+    display: flex;       
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.contenedor-principal_borde{
+    max-width: 70% !important;
+    display: flex;       
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    border: 3px solid white;
+    padding: 80px 180px;
+    border-radius: 10px;
+    transition: all .40s ease;
+}
+
+.contenedor-principal_borde:hover{
+    border-color: var(--blackcurrant-600);
+}
+
+
+
+
+.container-time{
+    font-size: 100px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container-buttons_time button{
+ padding: 7px 55px;   
+ margin: 20px 15px;
+ font-size: 20px;
+}
+
+.btn-reiniciar{
+    padding: 7px 40px !important;
+    border-width: 2px;
+}
+
+.btn-iniciar{
+    font-weight: bold;
+    outline: none;
+    color: #fff;
+    border-color: var(--blackcurrant-800);
+    border-width: 2px;
+    color: var(--blackcurrant-700);
+}
+
+    .btn-iniciar:hover{
+     background-color: var(--blackcurrant-800);  
+    border-color: var(--blackcurrant-800);
+    color: #fff;
+
+    }
+
+    .btn-iniciar:focus{
+        box-shadow: none;
+        box-shadow: #816ea2 !important;
+    }
+
+    .btn-iniciar:active{
+        box-shadow: none !important;
+    }
+.container-pomodoro_count{
+    margin-top: 40px;
+    font-size: 20px;
+    opacity: 0.6;
+}
+
+/* Crear tarea */
+
+.contenedor-tareas h2{
+ font-size: 45px;
+ margin-top: 100px;
+ margin-bottom: 90px;
+}
+
+.contenedor-crear_tareas{
+text-align: center;
+font-size: 25px;
+}
+
+.contenedor-crear_tareas input{
+    border: none;
+    border-bottom: 2px solid #fff;
+    width: 34%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contenedor-crear_tareas input:focus{
+    outline: none;
+}
+
+    .contenedor-crear_tareas input:hover{
+        border-bottom: 2px solid #cccccc;
+    }
+
+    .contenedor-crear_tareas input::placeholder{
+        font-style: italic;
+
+    }
+
+#goal-task{
+    opacity: 0.5;
+    margin-right: 15px;
+}
+
+.task-number-setGoal{
+/* opacity: 0.6; */
+font-weight: bold;
+margin-right: 30px;
+
+}
+
+.container-add-task_options{
+width: 34%;
+margin: 15px auto;
+display: flex;
+}
+
+.container-add-task_options button i{
+    color: white;
+    font-size: 20px;
+    
+}
+
+.container-add-task_options button {
+    border: 1px solid white;
+    padding: 5px 15px;
+}
+
+.container-add-task_options button:focus{
+    box-shadow: none;    
+}
+.btn-climbGoal{
+    margin-right: 15px;
+
+}
+
+.btn-addTask{
+    margin-top: 80px;
+    border: 1px solid white;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 14px 35px;
+}
+
+.container-tasks_main{
+    text-align: center;
+}
+
+/* Bordes */
+
+
+.borde-1{
+/* margin-top: 30px; */
+margin: 90px auto;
+margin-bottom: 0px;
+width: 60%;
+}
+
+.borde-2{
+margin: 100px auto;
+margin-bottom: 0px;
+width: 60%;
+}
+
+hr{
+    padding: 3px;
+    color: white;
+}
+
+/* Contenedor de tareas */
+
+.container-tasks{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.container-task{
+    width: 60%;
+}
+
+.container-task:last-child{
+    margin-bottom: 80px;
+}
+
+.container-tasks-first{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.btn-modify-task{
+    margin-left: 8px;
+    padding: 3px 18px;
+    font-size: 20px;
+
+}
+.btn-select-task{
+    margin-left: 8px;
+    margin-right: 10px;
+    padding: 3px 12px;
+    font-size: 20px;
+}
+
+#span{
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+#span input{
+    width: 70%;
+    border: none;
+    border-bottom: 2px solid #454545;
+    text-align: center;
+    background-color: white;
+    color: #454545;
+
+}
+
+#span input:focus{
+    outline: none;
+}
+
+#span input:hover{
+    border-color: #888;
+}
+
+.task-number-complete{
+    margin-left: 40px;
+    opacity: 0.8;
+}
+
+.task-number-goal{
+    opacity: 0.8;
+}
+
+#barra{
+    opacity: 0.8;
+}
+
+
+#completed-goal_modify{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
+}
+
+#completed-goal_modify span{
+    font-size: 18px;
+    color: #454545;
+}
+
+.modify_completed{
+    margin-left: 10px;
+    text-align: center;
+    padding: 5px;
+    background-color: #e9e9e9;
+    width: 70px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #454545;
+    opacity: 0.8;
+}
+
+    .modify_completed:focus{
+        outline: none;
+    }
+
+
+#barra-2{
+ margin: 0px 20px;
+}
+
+.container-modify_goal{
+    display: flex;
+    align-items: center;
+}
+
+.buttons_raise_lower{
+    margin-left: 20px;
+}
+
+    .buttons_raise_lower button{
+        padding: 4px 15px;
+    }
+
+    .lower_goal-btn{
+        margin-left: 7px;
+    }
+
+#buttons-modify{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-accept_modify{
+    margin: 0 10px;
+}
+
+.btn-delete_task{
+    margin-left: 30px;
+}
+
+
+/* SECTIONS */
+
+section{
+    background: #212529;
+}
+
+.HowToUse{
+    padding-top: 30px;
+}
+
+.tittle-section{
+    width: 80%;
+    margin: 0px auto;
+    padding-top: 50px;
+    color:#655479;
+    font-weight: bold;
+    line-height: 1.4;
+}
+.sections-information{
+    width: 80%;
+    margin: 0px auto;
+    padding: 50px 0;
+}
+
+.sections-information h2{
+    margin-bottom: 40px;
+    font-weight: bold;
+    /* color: #8e80b1; */
+    color:#655479;
+
+}
+
+.sections-content_text{
+    padding-bottom: 20px;
+}
+
+.sections-content_text h5{
+    /* color:#8e80b1; */
+    color:#655479;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+
+.sections-information ul li::marker{
+    color:#524662
+}
+
+
+.sections-content_text p{
+    line-height: 1.6;
+    opacity: .8;
+    font-size: 18px;
+}
+
+
+/* About pomodoro technique */
+
+.PomodoroTechnique{
+    padding: 0px;
+}
+
+
+.container-small_sections{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 70px;
+}
+
+.small-sections ul{
+    padding: 18px;
+}
+
+.small-sections li{
+    margin-top: 40px;
+}
+
+
+.small-sections ul > :first-child{
+    margin-top: 10px; 
+}
+.container-small_sections > :first-child {
+    border-right: 3px solid var(--blackcurrant-900);
+    padding-right: 30px;
+}
+
+.container-small_sections > :nth-child(2) {
+    padding-left: 30px;
+}
+
+
+
+.tittle_pomodoroTechnique{
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* About this project section */
+
+.AboutThis{
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+
+
+/* FOOTER */
+
+footer{
+    padding-top: 50px;
+    background: #212529;
+
+    padding-bottom: 5px;
+}
+.container-footer{
+    border-top: 5px solid var(--blackcurrant-950);
+    padding-top: 14px;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_name{
+    margin-left: 10px;
+    opacity: .8;
+    font-size: 23px;
+}
+
+
+.footer_icons a i {
+    font-size: 30px;
+    color: white;
+
+}
+
+.footer_icons a{
+    margin: 0 10px;
+}
+
+.footer_icons:last-child{
+    margin-right: 15px;
+}
+/* MEDIA QUERYS */
+
+/* Media query para pantallas con una resolución menor a 1024px */
+@media (max-width: 1196px) {
+    .contenedor-principal_borde{
+        max-width: 85% !important;
+        padding: 70px 50px;
+    }
+
+    .container-buttons_time {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-time{
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+ 
+}
+
+@media (max-width: 980px){
+    /* .contenedor-tiempo{
+        display: flex;
+        flex-direction: column;
+
+
+    }    */
+
+    .modal-contenido{
+        width: 95%;
+    }
+
+    .contenedor-principal_borde{
+        max-width: 85% !important;
+        padding: 70px 50px;
+    }
+}
+
+
+@media (max-width:850px){
+    #span {
+       width: 70%;
+    }
+}
+
+/* padding: 80px 180px; */
+
+ @media (max-width: 768px) {
+    .contenedor-principal_borde{
+        max-width: 85% !important;
+        padding: 70px 50px;
+        border-color: #352E3E;
+    }
+
+    .contenedor-crear_tareas input{
+        width: 60%;
+    }
+
+    .container-add-task_options{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /* tasks */
+
+    /* #span{
+        margin-left: 30px;
+        font-size: 20px;
+    
+    }
+
+    
+    #span input{
+        width: 70%;
+        border: none;
+        border-bottom: 2px solid #454545;
+        text-align: center;
+        background-color: white;
+        color: #454545;
+    
+    } */
+
+    #span{
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .tittle_task{
+        text-align: center;
+    }
+
+    .task-number-complete{
+        margin-left: 15px;
+    }
+    
+
+    
+    .container-task{
+        width: 80%;
+
+    }
+
+  
+}  
+
+@media (max-width: 690px) {
+    .contenedor-principal_borde{
+        max-width: 95% !important;
+        padding: 70px 30px;
+        /* border-color: ; */
+    }
+}
+
+
+@media (max-width: 600px) {
+   
+    #span{
+        width: 60%;
+    }
+    #barra-2{
+        display: none;
+    }
+
+    #completed-goal_modify{
+        flex-direction: column;
+        align-items: flex-start !important ; 
+        margin-top: 40px;
+
+    }
+
+    #completed-modify{
+        margin-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 534px) {
+
+    .contenedor-principal_borde{
+        max-width: 95% !important;
+        padding: 70px 30px;
+        /* border-color: ; */
+    }
+
+    .container-time{
+        font-size: 70px;
+    }
+
+    .container-buttons_time{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Crear tareas */
+
+    /* .contenedor-crear_tareas input{
+        border: none;
+        border-bottom: 2px solid #fff;
+        width: 34%;
+        text-align: center;
+        margin-bottom: 10px;
+    } */
+
+    .contenedor-crear_tareas input{
+        width: 70%;
+ 
+    }
+
+
+    .container-buttons button{
+        padding: 3px 10px;
+    }
+
+
+    #span input{
+        width: 60%;
+    }
+}
+
+@media (max-width: 450px){
+    #buttons-modify{
+        flex-direction: column;
+    }
+
+    #buttons-modify button {
+        margin: 0;
+        padding: 8px 70px;
+    }
+
+    #buttons-modify-success{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #buttons-modify-success button{
+        margin-top: 20px;
+    }
+
+    .container-small_sections{
+        display: block;
+    }
+
+    .container-small_sections > :first-child{
+        border: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .contenedor-principal_borde{
+        max-width: 95% !important;
+        padding: 70px 10px;
+    }
+
+    .container-time{
+        font-size: 50px;
+    }
+
+    .container-buttons_time{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* tasks */
+
+    .container-task{
+        width: 95%;
+
+    }
+
+    #span input{
+        width: 50%;
+    }
+
+  
+    #contenedor-tiempo-prueba{
+        flex-direction: column;
+
+    }
+
+    #contenedor-tiempo-prueba div{
+        margin-bottom: 25px;
+    }
+ 
+}
+
+
+@media (max-width: 340px) {
+
+    #span{
+        width: 50%;
+    }
+
+    #span input{
+        width: 90%;
+    }
+
+    #completed-goal_modify{
+        margin-left: 10px;
+
+    }
+}
+
+

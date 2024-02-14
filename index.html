@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,500&display=swap" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--icons  -->
+    <script src="https://kit.fontawesome.com/fbe30684dd.js" crossorigin="anonymous"></script>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css">
+    <title>M-Focus</title>
+
+    <!-- https://fontawesome.com/icons/clock?f=classic&s=solid&pc=%238f29a3 -->
+
+    <!-- <link rel="icon" href="icono.png" type="image/png"> -->
+    <link rel="icon" href="iconoss.ico" >
+
+
+</head>
+<body>
+
+
+    <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+        <div class="bg-dark p-4 informationNav">
+          <h5 class="text-body-emphasis h4">Sections</h5>
+          <ul class="listNav">
+            <a href="#HowToUse">How To Use</a>
+            <a href="#PomodoroTechnique">What is the Pomodoro technique?</a>
+            <a href="#AboutThis">About This Project</a>
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+        <h1>M-Focus</h1>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+<!-- <div class="container-header">
+    <h1>M-Focus</h1>
+    <ul>
+        <a href="#">How to use</a>
+        <a href="#acerca">About Project</a>
+        <a href="#acerca">About Me</a>
+    </ul>
+   
+</div> -->
+
+<!-- Modal -->
+
+<div id="miModal" class="modal">
+   
+    <div class="modal-contenido">
+        <div class="modal-header">
+            <h2 id="modal-tittle">Pomodoro Settings</h2>
+            <span class="cerrar" id="cerrarModal">&times;</span>
+        </div>
+       
+       
+        <div class="contenedor-tiempo">
+            <h2>Pomodoro Time</h2>
+
+           <div id="contenedor-tiempo-prueba">
+                <div>
+                    <label for="cantidad">Hours:</label>
+                    <input type="number" id="horas-set" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+                 </div>
+        
+                <div>
+                    <label for="cantidad">Minutes:</label>
+                    <input type="number" id="minutos-set" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+
+                </div>
+    
+        
+                <div>
+                    <label for="cantidad">Seconds:</label>
+                    <input type="number" id="segundos-set" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+
+                </div>
+
+           </div>
+           
+        </div>
+
+        <div class="border-bottom mb-3"></div>
+
+
+        <div class="contenedor-tiempo_descanso ">
+            <h2>Break Time</h2>
+            
+            <div id="contenedor-tiempo-prueba">
+                <div>
+                    <label for="cantidad">Hours:</label>
+                    <input type="number" id="horas-descanso" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+                </div>
+
+                <div>
+                    <label for="cantidad">Minutes:</label>
+                    <input type="number" id="minutos-descanso" name="cantidad" min="0" 
+                    max="100" step="1" value="5">
+                </div>
+
+                <div>
+                    <label for="cantidad">Seconds:</label>
+                    <input type="number" id="segundos-descanso" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal-more_options">
+            <label for="cantidad">Rest Interval</label>
+            <input type="number" id="intervalo_descanso" name="cantidad" min="0" 
+            max="100" step="1" value="1">
+          
+           
+        </div>
+
+        <div class="container-btn-modal">
+            <button class="btn-accept-modal btn btn-outline-dark">Accept</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Principal -->
+
+<div class="contenedor-principal">
+
+    <div class="container contenedor-principal_borde">
+        <button id="mostrarModal" class="btn btn-outline-dark">Settings</button>
+
+
+        <div class=" contenedor-tiempo_establecido container-time">
+            <span id="horas">0</span>
+            <span>:</span>
+            <span id="minutos">0</span>
+            <span>:</span>
+            <span id="segundos">0</span>
+        </div>
+
+        <div class="contenedor-tiempo_ejecucion container-time">
+            <span class="horas-s">0</span>
+            <span>:</span>
+            <span class="minutos-s">0</span>
+            <span>:</span>
+            <span class="segundos-s">0</span>
+        </div>
+        
+        <div class="container-buttons_time">
+            <button class="btn-iniciar btn btn-outline-success">Init</button>
+            <button class="btn-detener btn btn-outline-danger">Stop</button>
+            <button class="btn-reiniciar btn btn-outline-secondary">Restart</button>
+        </div>
+
+
+    </div>
+  
+    <div class="container-pomodoro_count">
+        <p ># <span class="contandor-pomodoro" >0</span></p>
+    </div>
+      
+</div>
+
+<div class=" borde-1" ><hr></div>
+
+
+<div class="contenedor-tareas">
+  
+    <div class="contenedor-crear_tareas">
+
+        <h2>Tasks</h2>
+
+        <!-- <label for="titulo-tarea">name of the task:</label> -->
+        <input placeholder="Name of the task" type="text" id="titulo-tarea" name="titulo-tarea" >
+
+        <div class="container-add-task_options">
+            <!-- <span id="goal-task">Goal </span> -->
+            <span class="task-number-setGoal">1</span>
+            <button class="btn-climbGoal btn"><i class="fa-solid fa-arrow-up"></i></button> 
+            <button class="btn-lowerGoal btn"><i class="fa-solid fa-arrow-down"></i></button>    
+        </div>
+
+        <button class="btn-addTask btn btn-outline-dark ">Add task</button>
+
+    </div>
+
+    <div class="borde-2" ><hr></div>
+
+
+    <div class="container-tasks_main">
+        <h2>Tasks to be <span class="text-success">done</span></h2>
+        <div class="container-tasks">
+          
+        </div>
+    
+    </div>
+
+</div>
+
+<!-- Sections -->
+
+<section class="container-fluid section-container">
+    <h2 class="tittle-section">Boost your productivity, take control of your time! M-Focus: Your ally to achieve more with every minute.</h2>
+
+   <div class="sections-information HowToUse">
+        <h2 id="HowToUse" >How To Use</h2>
+        <ul>
+            <div>
+              <div>
+                <li>
+                    <div class="sections-content_text">
+                        <h5>Add Tasks <b>(Opcional)</b></h5>
+                        <p>You can add tasks you plan to work on during your Pomodoro sessions. This is optional, but can help you keep a more organized track of your activities.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sections-content_text">
+                        <h5>Set Times</h5>
+                        <p>Set the time for each Pomodoro interval, the frequency of breaks (how many Pomodoros you want to break), and the duration of each break. Customize these settings according to your preferences and needs.
+    
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sections-content_text">
+                        <h5>Start Timer</h5>
+                        <p>Click the Start button to start the timer. Focus all your attention on the assigned task until the next Pomodoro interval is completed.
+                        </p>
+                    </div>
+                </li>
+              </div>
+             <div>
+                <li>
+                    <div class="sections-content_text">
+                        <h5>Take Scheduled Breaks</h5>
+                        <p>When the timer reaches the end of a Pomodoro interval, take a break based on the duration you set. Disconnect for a short period to recharge.
+                        </p>
+                   </div>
+                </li>
+                <li>
+                    <div class="sections-content_text">
+                        <h5>Iterate until Task Complete</h5>
+                        <p>Repeat the cycle of work and rest until you have completed the specific task. The app will continue to guide you through Pomodoro intervals and breaks until you finish your work.
+                        </p>
+                    </div>
+                </li>
+             </div>
+            </div>
+        </ul>
+   </div>
+
+   <div class="sections-information PomodoroTechnique">
+        <h2 id="PomodoroTechnique">What is the Pomodoro technique?</h2>
+        <div class="sections-content_text">
+            <div>
+                <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the 1980s. Its name is derived from the Italian word "pomodoro", which means tomato. The method is named so because of the tomato-shaped kitchen timers that Cirillo used during his university studies.
+                </p>
+            </div>
+            <div class="container-small_sections">
+                <div class="small-sections border-section">
+                    <h5 class="tittle_pomodoroTechnique">Basic Principles</h5>
+                    <ul>
+                        <li>
+                            <h5>
+                                Time Division:
+                            </h5>
+                            <p>   
+                                 Divide your work into time intervals called "Pomodoros." A Pomodoro typically lasts for 25 minutes.
+                            </p>
+                        </li>
+
+                        <li>
+                            <h5>
+                                Exclusive Focus:
+                            </h5>
+                            <p>   
+                                During each Pomodoro, concentrate on a specific task without distractions.
+                            </p>
+                        </li>
+
+                        <li>
+                            <h5>
+                                Short Breaks:
+                            </h5>
+                            <p>   
+                                After completing a Pomodoro, take a brief 5-minute break. After completing four Pomodoros, take a longer break of 15-30 minutes.
+                            </p>
+                        </li>
+
+                        <li>
+                            <h5>
+                                Activity Logging:
+                            </h5>
+                            <p>   
+                                Keep a record of your Pomodoros to evaluate your productivity and make improvements.
+                            </p>
+                        </li>
+                                                            
+                    </ul>
+                </div>
+
+                <div class="small-sections">
+                    <h5 class="tittle_pomodoroTechnique">Benefits
+
+                    </h5>
+                    <ul>
+                        <li>
+                            <h5>
+                                Increased Concentration: 
+                            </h5>
+                            <p>   
+                                Phe Pomodoro technique promotes concentration and prevents procrastination by breaking work into manageable blocks.
+                            </p>
+                        </li>
+
+                        <li>
+                            <h5>
+                                Improved Time Management:
+                            </h5>
+                            <p>   
+                                By setting time limits, you can enhance efficiency and avoid mental fatigue.
+                            </p>
+                        </li>
+
+                        <li>
+                            <h5>
+                                Stress Management                            </h5>
+                            <p>   
+                                Regular breaks contribute to maintaining a healthy balance and reducing stress.
+                            </p>
+                        </li>
+
+                        <li>
+                            <h5>
+                                Adaptability
+                            </h5>
+                            <p>   
+                                You can adjust the duration of Pomodoros according to your preferences and needs.
+                            </p>
+                        </li>
+                                                            
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+   </div>
+
+   <div class="sections-information AboutThis">
+     <h2 id="AboutThis" style="text-align: center;">About This Project</h2>
+        <div class="sections-content_text AboutThisText">
+            <p>
+                Hi, I'm Michael, the 18-year-old creator behind this website and M-Focus, my implementation of the Pomodoro Technique. I started this project as a way to hone my programming skills after a break and take on the challenge of building something new. I frequently apply the Pomodoro technique in my study and programming sessions, inspiring me to develop my own tool.
+            </p>
+
+            <p>
+                Originally envisioning a simple countdown project, I found myself driven to incorporate additional features such as break times, task management, and customizable settings. This expansion significantly prolonged the development timeline, compounded by my limited weekly hours—sometimes as little as one—due to work commitments and other responsibilities.
+            </p>
+
+            <p> 
+               I'm excited to announce the completion of the project and plan to continually enhance it with features beneficial to users. Additionally, I aim to develop other projects catering to students' productivity needs. Thank you for choosing M-Focus!
+            </p>
+           
+          
+        </div>
+
+
+    </div>
+</section>
+
+<!-- Footer -->
+
+
+<footer>
+    <div class="container-footer">
+        <div class="footer_name">
+            <p><b>©</b> Michael Benjamín Castillo, <b style="color:#766293;">Developer.</b></p>
+        </div>
+        <div class="footer_icons">
+            <a target="_blank" href="https://www.instagram.com/michaelbenjamin02/?hl=es-la">
+               <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a target="_blank" href="https://github.com/MichaelCastillo02">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/michael-benjamin-72361b286/">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a target="_blank" href="mailto:michaelbenjamincastillo@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+   
+</footer>
+
+
+<!-- <img src="abajo.svg" alt=""> -->
+<script src="main.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
